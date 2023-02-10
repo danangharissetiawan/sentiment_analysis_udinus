@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}Sentiment Analysis - Broadcasting{% endblock %} </title>
+	<link rel="icon" href="{% static "images/favicon.png" %}">
+
+	{% include "styles.html" %}
+</head>
+<body>
+
+	<!-- loader -->
+	<div class="fakeLoader"></div>
+	<!-- end loader -->
+
+	<!-- navbar -->
+	{% include "navbar.html" %}
+	<!-- end navbar -->
+
+	<!-- content -->
+    {% block content %}{% endblock %}
+
+	<!-- footer -->
+	{% include "footer.html" %}
+
+	<!-- script -->
+	{% include "scripts.html" %}
+
+    <script src="//cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <script>
+        const csrftoken = Cookies.get('csrftoken');
+        console.log(csrftoken);
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // DOM Loaded
+            {% block domready %}
+            {% endblock domready %}
+        })
+    </script>
+
+</body>
+</html>

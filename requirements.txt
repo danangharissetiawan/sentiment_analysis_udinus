@@ -1,0 +1,11 @@
+django
+djangorestframework
+markdown
+django-filter
+
+tensoflow
+keras_preprocessing
+selenium
+pandas
+numpy
+instaloader
