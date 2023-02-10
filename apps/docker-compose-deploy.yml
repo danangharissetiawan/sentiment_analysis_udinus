@@ -1,0 +1,30 @@
+version: '3.10'
+
+services:
+  gcloud:
+    image: google/cloud-sdk:latest
+    volumes:
+      - .:/code
+    command: /bin/bash -c "gcloud auth activate-service-account --key-file /code/credentials.json && gcloud config set project $PROJECT_ID && gcloud config set compute/zone $ZONE && gcloud container clusters get-credentials $CLUSTER_NAME && kubectl apply -f /code/deployment.yaml"
+    
+    working_dir: /code
+    
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  db:
+      image: postgres
+      volumes:
+          - db_data:/var/lib/postgresql/data/
+      environment:
+        POSTGRES_PASSWORD: postgres
+
+volumes:
+    db_data:

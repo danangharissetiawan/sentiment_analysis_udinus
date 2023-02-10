@@ -3,9 +3,13 @@ djangorestframework
 markdown
 django-filter
 psycopg2-binary
+whitenoise
 
 numpy
 pandas
 keras
 keras_preprocessing
+
+
+gunicorn
 tensorflow
