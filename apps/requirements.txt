@@ -1,0 +1,11 @@
+django
+djangorestframework
+markdown
+django-filter
+psycopg2-binary
+
+numpy
+pandas
+keras
+keras_preprocessing
+tensorflow

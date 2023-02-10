@@ -7,7 +7,25 @@ This is a simple example of how to broadcast sentiment analysis to UDINUS using 
 $ git clone https://github.com/danangharissetiawan/sentiment_analysis_udinus.git
 ```
 
-## Usage
+## Installation using Docker
+```shell
+$ git clone https://github.com/danangharissetiawan/sentiment_analysis_udinus.git
+$ cd sentiment_analysis_udinus
+$ docker-compose up -d
+```
+### Migrate database
+```shell
+$ docker-compose exec web python manage.py makemigrations
+$ docker-compose exec web python manage.py migrate
+```
+
+### Create superuser
+```shell
+$ docker-compose exec web python manage.py createsuperuser
+```
+
+
+## Installation locally
 ```shell
 $ cd sentiment_analysis_udinus
 ```

@@ -1,12 +1,16 @@
 import numpy as np
-import tensorflow as tf
+# import tensorflow as tf
+from keras.models import load_model
 from keras_preprocessing.sequence import pad_sequences
-
+from django.conf import settings
 import pickle
 
-model = tf.keras.models.load_model('D:/Dev/Learning/sentiment_analysis_udinus/models/modelupsample_ep_10.h5')
 
-with open('D:/Dev/Learning/sentiment_analysis_udinus/models/tokenizerupsample_ep_10.pickle', 'rb') as handle:
+model = load_model(settings.MODEL)
+# with open(settings.MODEL, 'rb') as handle:
+#     model = pickle.load(handle)
+
+with open(settings.TOKENIZER, 'rb') as handle:
     tokenizer = pickle.load(handle)
 
 

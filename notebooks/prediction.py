@@ -1,8 +1,9 @@
 import numpy as np
-import tensorflow as tf
+# import tensorflow as tf
 from keras_preprocessing.sequence import pad_sequences
 
-model = tf.keras.models.load_model('D:/Dev/Learning/sentiment_analysis_udinus/models/modelupsample_ep_10.h5')
+from keras.models import load_model
+# model = tf.keras.models.load_model('D:/Dev/Learning/sentiment_analysis_udinus/models/modelupsample_ep_10.h5')
 
 # load model and tokenizerm
 import pickle
@@ -10,6 +11,8 @@ import pickle
 # with open('D:/Dev/Learning/sentiment_analysis_udinus/models/modelupsample_ep_10.pickle', 'rb') as f:
 #     model = pickle.load(f)
 
+# pickle_model = open('D:/Dev/Learning/sentiment_analysis_udinus/models/modelupsample_ep_10.pickle', 'rb')
+model = load_model('D:/Dev/Learning/sentiment_analysis_udinus/models/modelupsample_ep_10.h5')
 
 with open('D:/Dev/Learning/sentiment_analysis_udinus/models/tokenizerupsample_ep_10.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
