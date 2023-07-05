@@ -3,9 +3,10 @@ djangorestframework
 markdown
 django-filter
 
-tensoflow
-keras_preprocessing
+#tensoflow
+#keras_preprocessing
 selenium
 pandas
 numpy
 instaloader
+scikit-learn
