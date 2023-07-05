@@ -1,3 +1,4 @@
+# %%
 # Import library yang dibutuhkan
 import re, string, unicodedata  # modul regular expression
 
@@ -143,57 +144,6 @@ df.head()
 # %%
 # save to csv
 df.to_csv("data/datasets_clean.csv", index=False)
-
-# %%
-
-# fetch sentiment
-# from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-#
-#
-# # with sia
-# def fetch_sentiment_using_SIA(text):
-#     analyzer = SentimentIntensityAnalyzer()
-#     vs = analyzer.polarity_scores(text)
-#     return 'pos' if vs['compound'] >= 0.05 else 'neg' if vs['compound'] <= -0.05 else 'neu'
-#
-#
-# # with textblob
-# from textblob import TextBlob
-#
-#
-# def fetch_sentiment_using_textblob(text):
-#     analysis = TextBlob(text)
-#     return 'pos' if analysis.sentiment.polarity >= 0.05 else 'neg' if analysis.sentiment.polarity <= -0.05 else 'neu'
-#
-#
-# def fetch_sentiment_using_textblob2(text):
-#     analysis = TextBlob(text)
-#     return 'pos' if analysis.sentiment.polarity >= 0 else 'neg'
-# %%
-
-# apply sentiment
-# sentiment_using_sia = df["text"].swifter.apply(fetch_sentiment_using_SIA)
-# pd.DataFrame(sentiment_using_sia.value_counts())
-
-# %%
-# apply sentiment
-# sentiment_using_textblob = df["text"].swifter.apply(fetch_sentiment_using_textblob)
-# pd.DataFrame(sentiment_using_textblob.value_counts())
-
-# %%
-# apply sentiment
-# sentiment_using_textblob2 = df["text"].swifter.apply(fetch_sentiment_using_textblob2)
-# pd.DataFrame(sentiment_using_textblob2.value_counts())
-
-# %%
-
-# save sentiment
-# df["sentiment"] = sentiment_using_textblob
-# df.to_csv("data/comments_sentiment.csv", index=False)
-
-# %%
-
-# df.value_counts("sentiment")
 
 # %%
 # remove row with null value

@@ -171,5 +171,5 @@ REST_FRAMEWORK = {
 }
 
 
-MODEL = BASE_DIR / 'models/modelupsample_ep_10.h5'
+MODEL = BASE_DIR / 'models/model_10_nobalance.h5'
 TOKENIZER = BASE_DIR / 'models/tokenizerupsample_ep_10.pickle'
